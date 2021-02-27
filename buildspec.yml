@@ -19,7 +19,7 @@ phases:
       #3a. If role is direcly mentioned, uncomment below line and replace role_arn
       #- aws eks --region $AWS_DEFAULT_REGION update-kubeconfig --name $EKS_CLUSTER_NAME --role-arn <role_arn>
       - aws sts get-caller-identity
-      - cat ~/.kube/config
+      # - cat ~/.kube/config
       #4. Set the image tag
       - export TAG=$CODEBUILD_RESOLVED_SOURCE_VERSION
   build:
