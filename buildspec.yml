@@ -11,7 +11,8 @@ lsphases:
       # - aws sts get-caller-identity --profile anotheracc
       #2. Install kubectl according to your EKS cluster version
       - curl -LO https://storage.googleapis.com/kubernetes-release/release/$(curl -s https://storage.googleapis.com/kubernetes-release/release/stable.txt)/bin/linux/amd64/kubectl
-      - chmod +x kubectl      - mkdir -p $HOME/bin && cp ./kubectl $HOME/bin/kubectl && export PATH=$HOME/bin:$PATH
+      - chmod +x kubectl
+      - mv ./kubectl /usr/local/bin/kubectl
       - kubectl version --short --client
       #3. Create kubeconfig file for your EKS cluster, replace region and name values
       #3a. If role is direcly mentioned, uncomment below line and replace role_arn
