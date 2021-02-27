@@ -24,4 +24,5 @@ phases:
       - export TAG=$CODEBUILD_RESOLVED_SOURCE_VERSION
   build:
     commands:
+      - print $TAG
       - kubectl get svc
